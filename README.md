@@ -1,6 +1,8 @@
 # slack-wrapper
 Simple Slack API wrapper for ruby
 
+This README is still a work in progress. I will add more to it as time permits.
+
 * [Installation](https://github.com/reyloc/slack-wrapper#installation)
 * [Usage](https://github.com/reyloc/slack-wrapper#usage)
   * [Create the bot and get a token](https://github.com/reyloc/slack-wrapper#create-the-bot-and-get-a-token)
