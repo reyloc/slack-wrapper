@@ -58,7 +58,41 @@ Replacing YOUR TOKEN HERE with your actual Slack API token.
 
 #### Listing all Channels
 
+To get a list of all channels, you will use the ```Slack::API::Channels.get_channels``` function. This takes one option argument to determine if you want archived channels included.
+
+Archive channels excluded:
+```
+Slack::API::Channels.get_channels
+```
+Archive channels included:
+```
+Slack::API::Channels.get_channels(true)
+```
+The full code would look like this:
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+channels = Slack::API::Channels.get_channels
+```
+The return is an array of [channel objects](https://api.slack.com/types/channel) that have been made into Hashes for your convenience. You could use this to then print out all channel names if you so wished:
+```
+channels.each do |channel|
+  puts channel['name']
+end
+```
+Option Name | Mandatory?           | Description
+------------|----------------------|--------------------------
+search      | Yes                  | The search term
+archived    | No, default is false | Search archived channels
+regex       | No, default is false | Do a regex search
+
 #### Searching Channels
+
+To search through all channels, you will use the ```Slack::API::Channels.search``` function. This takes 1 mandatory option and two optional ones:
+
+
 
 #### Archiving/Creating Channels
 
