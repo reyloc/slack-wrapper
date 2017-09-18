@@ -9,15 +9,15 @@ This README is still a work in progress. I will add more to it as time permits.
   * [Get your user's API token](https://github.com/reyloc/slack-wrapper#get-your-users-api-token)
   * [Using the API token](https://github.com/reyloc/slack-wrapper#using-the-api-token)
   * Channels
-    * Listing all Channels
-    * Searching Channels
-    * Archiving/Creating Channels
-    * Getting Channel Info
-    * Getting Channel History
-    * Joining/Leaving a Channel
-    * Inviting/Kicking a user to/from a Channel
-    * Renaming a Channel
-    * Setting Channel Purpose and Topic
+    * [Listing all Channels](https://github.com/reyloc/slack-wrapper#listing-all-channels)
+    * [Searching Channels](https://github.com/reyloc/slack-wrapper#searching-channels)
+    * [Archiving/Creating Channels](https://github.com/reyloc/slack-wrapper#archivingcreating-channels)
+    * [Getting Channel Info](https://github.com/reyloc/slack-wrapper#getting-channel-info)
+    * [Getting Channel History](https://github.com/reyloc/slack-wrapper#getting-channel-history)
+    * [Joining/Leaving a Channel](https://github.com/reyloc/slack-wrapper#joiningleaving-a-channel)
+    * [Inviting/Kicking a user to/from a Channel](https://github.com/reyloc/slack-wrapper#invitingkicking-a-user-tofrom-a-channel)
+    * [Renaming a Channel](https://github.com/reyloc/slack-wrapper#renaming-a-channel)
+    * [Setting Channel Purpose and Topic](https://github.com/reyloc/slack-wrapper#setting-channel-purpose-and-topic)
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
 
