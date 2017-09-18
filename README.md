@@ -18,4 +18,4 @@ gem install slack-wrapper-0.0.1.gem
 
 ### Create the bot and get a token
 Go to [this link](https://my.slack.com/services/new/bot) to create a new bot.
-![Create a Bot Page][images/create_a_bot.png]
+![Create a Bot Page](images/create_a_bot.png)
