@@ -93,6 +93,18 @@ search      | Yes                  | The search term
 archived    | No, default is false | Search archived channels
 regex       | No, default is false | Do a regex search
 
+To search for an active channel named 'bacon' we would use coding like:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+channel = Slack::API::Channels.search('bacon')
+```
+
+This will return a [channel object](https://api.slack.com/types/channel) that has been made into Hashes for your convenience.
+
 #### Archiving/Creating Channels
 
 #### Getting Channel Info
