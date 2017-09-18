@@ -8,8 +8,19 @@ This README is still a work in progress. I will add more to it as time permits.
   * [Create the bot and get a token](https://github.com/reyloc/slack-wrapper#create-the-bot-and-get-a-token)
   * [Get your user's API token](https://github.com/reyloc/slack-wrapper#get-your-users-api-token)
   * [Using the API token](https://github.com/reyloc/slack-wrapper#using-the-api-token)
+  * Channels
+    * Listing all Channels
+    * Searching Channels
+    * Archiving/Creating Channels
+    * Getting Channel Info
+    * Getting Channel History
+    * Joining/Leaving a Channel
+    * Inviting/Kicking a user to/from a Channel
+    * Renaming a Channel
+    * Setting Channel Purpose and Topic
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
+
 ## Installation
 You can install the gem via:
 ```
@@ -42,6 +53,26 @@ Slack.configure do |config|
 end
 ```
 Replacing YOUR TOKEN HERE with your actual Slack API token.
+
+### Channels
+
+#### Listing all Channels
+
+#### Searching Channels
+
+#### Archiving/Creating Channels
+
+#### Getting Channel Info
+
+#### Getting Channel History
+
+#### Joining/Leaving a Channel
+
+#### Inviting/Kicking a user to/from a Channel
+
+#### Renaming a Channel
+
+#### Setting Channel Purpose and Topic
 
 ### Using RTM
 This gem includes the two Slack API RTM (real time messaging) functions and can be used for your user/bot to listen and reply  to your slack channels. You can use whatever means you wish to connect and use the websocket link they provide, but my suggestions are [haye-websocket](https://github.com/faye/faye-websocket-ruby) and [EventMachine](https://github.com/eventmachine/eventmachine). Example code of this all in action would be:
