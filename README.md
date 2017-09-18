@@ -8,7 +8,7 @@ gem install slack-wrapper
 ```
 If you wish, you could install pull the source code from here and install it locally:
 ```
-git clone 
+git clone git@github.com:reyloc/slack-wrapper.git
 cd slack-wrapper
 gem build slack-wrapper.gemspec
 gem install slack-wrapper-0.0.1.gem
