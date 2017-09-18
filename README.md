@@ -82,17 +82,16 @@ channels.each do |channel|
   puts channel['name']
 end
 ```
-Option Name | Mandatory?           | Description
-------------|----------------------|--------------------------
-search      | Yes                  | The search term
-archived    | No, default is false | Search archived channels
-regex       | No, default is false | Do a regex search
 
 #### Searching Channels
 
 To search through all channels, you will use the ```Slack::API::Channels.search``` function. This takes 1 mandatory option and two optional ones:
 
-
+Option Name | Mandatory?           | Description
+------------|----------------------|--------------------------
+search      | Yes                  | The search term
+archived    | No, default is false | Search archived channels
+regex       | No, default is false | Do a regex search
 
 #### Archiving/Creating Channels
 
