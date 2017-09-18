@@ -3,9 +3,9 @@ Simple Slack API wrapper for ruby
 
 * [Installation](https://github.com/reyloc/slack-wrapper#installation)
 * [Usage](https://github.com/reyloc/slack-wrapper#usage)
-⋅⋅* [Create the bot and get a token](https://github.com/reyloc/slack-wrapper#create-the-bot-and-get-a-token)
-⋅⋅* [Get your user's API token](https://github.com/reyloc/slack-wrapper#get-your-users-api-token)
-⋅⋅* [Using the API token](https://github.com/reyloc/slack-wrapper#using-the-api-token)
+  * [Create the bot and get a token](https://github.com/reyloc/slack-wrapper#create-the-bot-and-get-a-token)
+  * [Get your user's API token](https://github.com/reyloc/slack-wrapper#get-your-users-api-token)
+  * [Using the API token](https://github.com/reyloc/slack-wrapper#using-the-api-token)
 
 ## Installation
 You can install the gem via:
