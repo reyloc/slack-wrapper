@@ -22,9 +22,6 @@ Gem::Specification.new do |s|
                    'lib/slack-wrapper/api/bots.rb',
                    'lib/slack-wrapper/api/auth.rb'
                  ]
-  s.add_runtime_dependency 'net/https', '~> 0'
-  s.add_runtime_dependency 'json', '~> 0'
-  s.add_runtime_dependency 'uri', '~> 0',
-  s.add_runtime_dependency 'iodine', '~> 0'
+  s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'
   s.add_runtime_dependency 'multipart-post', '~> 0'
 end
