@@ -103,13 +103,71 @@ end
 channel = Slack::API::Channels.search('bacon')
 ```
 
-This will return a [channel object](https://api.slack.com/types/channel) that has been made into Hashes for your convenience.
+This will return a [channel object](https://api.slack.com/types/channel) that has been made into Hashes for your convenience. If you did a regex search, you instead get an array of [channel objects](https://api.slack.com/types/channel) that have been made into Hashes for your convenience
 
-#### Archiving/Creating Channels
+#### Archiving/Unarchiving Channels
+
+To archive or unarchive a channel, you will need the Channel ID. This can be obtained via a [channel object](https://api.slack.com/types/channel), such as the one you get from [Searching Channels](https://github.com/reyloc/slack-wrapper#searching-channels). To do this, you will use the ```Slack::API::Channels.archive``` and ```Slack::API::Channels.unarchive``` functions. These take 1 mandatory option (namely the Channel ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+archived = Slack::API::Channels.archive('C516PHW2C')
+puts "Channel C516PHW2C archived" if archived
+unarchived = Slack::API::Channels.unarchive('C516PHW2C')
+puts "Channel C516PHW2C unarchived" if unarchived
+```
+
+Both functions return ```true``` or ```false``` to represent if the action succeeded or not. 
+
+#### Creating Channels
+
+To create a channel, you will use the ```Slack::API::Channels.create``` function. This takes 1 mandatory argument (the name of the new channel) and one optional boolean argument. The optional boolean argument tells the Slack API whether it should validate the channel name given or not. What this means is it will change the channel name to meet requirements if needed. By default, this optional argument is set to ```false```.
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+channel = Slack::API::Channels.create('hamsammich')
+```
+
+This will return a [channel object](https://api.slack.com/types/channel) that has been made into Hashes for your convenience.
 
 #### Getting Channel Info
 
+To get a [channel object](https://api.slack.com/types/channel) converted into a Hash for your convenience, you will use the ```Slack::API::Channels.info``` function. This function takes 1 mandatory argument (the Channel ID).
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+channel = Slack::API::Channels.info('C516PHW2C')
+```
+
 #### Getting Channel History
+
+To get a history of all channel activity, you will use the ```Slack::API::Channels.history``` function. This takes 2 mandatory arguments:
+
+Argument | Meaning
+---------|---------------------------
+id       | The Channel ID
+count    | Number of items to return
+
+Keep in mind the more returned, the longer the query will take. It looks like this:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+history = Slack::API::Channels.history('C516PHW2C', 100)
+```
+
+This will return an array of (message objects)[https://api.slack.com/events/message] converted into Hashes for your convenience.
 
 #### Joining/Leaving a Channel
 
@@ -120,6 +178,7 @@ This will return a [channel object](https://api.slack.com/types/channel) that ha
 #### Setting Channel Purpose and Topic
 
 ### Using RTM
+
 This gem includes the two Slack API RTM (real time messaging) functions and can be used for your user/bot to listen and reply  to your slack channels. You can use whatever means you wish to connect and use the websocket link they provide, but my suggestions are [haye-websocket](https://github.com/faye/faye-websocket-ruby) and [EventMachine](https://github.com/eventmachine/eventmachine). Example code of this all in action would be:
 ```
 require 'slack-wrapper'
