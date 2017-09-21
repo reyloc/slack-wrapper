@@ -20,7 +20,7 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Setting Channel Purpose and Topic](https://github.com/reyloc/slack-wrapper#setting-channel-purpose-and-topic)
   * [Chat](https://github.com/reyloc/slack-wrapper#chat)
     * [Post Standard Message](https://github.com/reyloc/slack-wrapper#post-standard-message)
-    * [Post Standard Message w/ Attachment]()
+    * [Post Standard Message w/ Attachment](https://github.com/reyloc/slack-wrapper#post-standard-message-w-attachment)
     * [Post /me Message](https://github.com/reyloc/slack-wrapper#post-me-message)
     * [Post Ephemeral Message](https://github.com/reyloc/slack-wrapper#post-ephemeral-message)
     * [Update Message](https://github.com/reyloc/slack-wrapper#update-message)
