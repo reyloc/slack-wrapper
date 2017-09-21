@@ -18,6 +18,12 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Inviting/Kicking a user to/from a Channel](https://github.com/reyloc/slack-wrapper#invitingkicking-a-user-tofrom-a-channel)
     * [Renaming a Channel](https://github.com/reyloc/slack-wrapper#renaming-a-channel)
     * [Setting Channel Purpose and Topic](https://github.com/reyloc/slack-wrapper#setting-channel-purpose-and-topic)
+  * Chat
+    * Post Standard Message
+    * Post /me Message
+    * Post Ephemeral Message
+    * Update Message
+    * Delete Message
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
 
@@ -227,6 +233,18 @@ puts "Channel C516PHW2C topic now 'Food'" if Slack::API::Channels.set_topic('C51
 ```
 
 Both return a boolean to indicate if the attempted action was successful.
+
+### Chat
+
+#### Post Standard Message
+
+#### Post /me Message
+
+#### Post Ephemeral Message
+
+#### Update Message
+
+#### Delete Message
 
 ### Using RTM
 
