@@ -8,6 +8,9 @@ This README is still a work in progress. I will add more to it as time permits.
   * [Create the bot and get a token](https://github.com/reyloc/slack-wrapper#create-the-bot-and-get-a-token)
   * [Get your user's API token](https://github.com/reyloc/slack-wrapper#get-your-users-api-token)
   * [Using the API token](https://github.com/reyloc/slack-wrapper#using-the-api-token)
+  * Authentication
+    * Test if authenticated
+  * Get API User ID and Name
   * [Channels](https://github.com/reyloc/slack-wrapper#channels)
     * [Listing all Channels](https://github.com/reyloc/slack-wrapper#listing-all-channels)
     * [Searching Channels](https://github.com/reyloc/slack-wrapper#searching-channels)
@@ -34,6 +37,22 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Delete a File Comment](https://github.com/reyloc/slack-wrapper#delete-a-file-comment)
     * [Edit a File Comment](https://github.com/reyloc/slack-wrapper#edit-a-file-comment)
     * [Editing File URL properties](https://github.com/reyloc/slack-wrapper#editing-file-url-properties)
+  * IM
+    * Opening an IM
+    * Closing an IM
+    * Listing all IMs
+    * Getting an IM's History
+  * Users
+    * Getting User Info
+    * Listing all Users
+    * Searching for a User
+    * Get a User's Profile
+    * Setting a User's Profile
+  * Permissions
+    * Showing Permissions
+    * Requesting Permissions
+  * Bots
+    * Get Bot info
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
 
@@ -65,14 +84,45 @@ From there you will be brought to a page where you can edit the bot name and oth
 Go to [this link](https://api.slack.com/custom-integrations/legacy-tokens) to get a legacy token (you could go through the whole [Oauth2](https://api.slack.com/docs/oauth) process instead to get a token if you wish). From there, click to get an API token issued and copy it somewhere safe.
 
 ### Using the API token
+
 To use your Slack API token, you simply use coding such as this:
+
 ```
 require 'slack-wrapper'
 Slack.configure do |config|
   config.token = 'YOUR TOKEN HERE'
 end
 ```
+
 Replacing YOUR TOKEN HERE with your actual Slack API token.
+
+### Authentication
+
+#### Test if authenticated
+
+To test if your API user is autgenticated, you will use the ```Slack::API::Auth.is_valid?``` function. You can also just call the class itself (it achieves the same effect) using ```Slack::API::Auth```:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Auth'd" if Slack::API::Auth.is_valid?
+puts "Auth'd" if Slack::API::Auth
+```
+
+### Get API User ID and Name
+
+To get the API user's ID and name, you can use the functions ```Slack.id``` and ```Slack.name``` respectifully.:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "API User ID is #{Slack.id}"
+puts "API User name is #{Slack.name}"
+```
 
 ### Channels
 
@@ -492,6 +542,38 @@ file_two = Slack::API::Files.enable_URL('F82GACDG8')
 ```
 
 Revoking the URL returns the URL itself while enabling it returns a [file object](https://api.slack.com/types/file) that has been made into Hashes for your convenience.
+
+### IM
+
+#### Opening an IM
+
+#### Closing an IM
+
+#### Listing all IMs
+
+#### Getting an IM's History
+
+### Users
+
+#### Getting User Info
+
+#### Listing all Users
+
+#### Searching for a User
+
+#### Get a User's Profile
+
+#### Setting a User's Profile
+
+### Permissions
+
+#### Showing Permissions
+
+#### Requesting Permissions
+
+### Bots
+
+#### Get Bot info
 
 ### Using RTM
 
