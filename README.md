@@ -18,12 +18,13 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Inviting/Kicking a user to/from a Channel](https://github.com/reyloc/slack-wrapper#invitingkicking-a-user-tofrom-a-channel)
     * [Renaming a Channel](https://github.com/reyloc/slack-wrapper#renaming-a-channel)
     * [Setting Channel Purpose and Topic](https://github.com/reyloc/slack-wrapper#setting-channel-purpose-and-topic)
-  * Chat
-    * Post Standard Message
-    * Post /me Message
-    * Post Ephemeral Message
-    * Update Message
-    * Delete Message
+  * [Chat](https://github.com/reyloc/slack-wrapper#chat)
+    * [Post Standard Message](https://github.com/reyloc/slack-wrapper#post-standard-message)
+    * [Post Standard Message w/ Attachment]()
+    * [Post /me Message](https://github.com/reyloc/slack-wrapper#post-me-message)
+    * [Post Ephemeral Message](https://github.com/reyloc/slack-wrapper#post-ephemeral-message)
+    * [Update Message](https://github.com/reyloc/slack-wrapper#update-message)
+    * [Delete Message](https://github.com/reyloc/slack-wrapper#delete-message)
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
 
@@ -237,6 +238,8 @@ Both return a boolean to indicate if the attempted action was successful.
 ### Chat
 
 #### Post Standard Message
+
+#### Post Standard Message w/ Attachment
 
 #### Post /me Message
 
