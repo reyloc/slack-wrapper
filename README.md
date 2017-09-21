@@ -243,7 +243,7 @@ Both return a boolean to indicate if the attempted action was successful.
 
 #### Post Standard Message
 
-To post a standard message, you will use the ```Slack::API::Chat.post``` function, which takes 2 mandatory arguments (text to post and Channel ID) and one optional argument (an object containing various options for the post). 
+To post a standard message, you will use the ```Slack::API::Chat.post``` function, which takes 2 mandatory arguments (text to post and Channel ID) and 1 optional argument (an object containing various options for the post). 
 
 ```
 require 'slack-wrapper'
@@ -273,7 +273,7 @@ This returns a boolean to indicate if the attempted action was successful.
 
 #### Post Ephemeral Message
 
-To post an ephemeral message, you will use the ```Slack::API::Chat.post_ephemeral``` function, which takes 3 mandatory arguments (text to post, Channel ID, and User ID) and one optional argument (an object containing various options for the post). If you are not familiar with ephemeral messages, they look like this:
+To post an ephemeral message, you will use the ```Slack::API::Chat.post_ephemeral``` function, which takes 3 mandatory arguments (text to post, Channel ID, and User ID) and 1 optional argument (an object containing various options for the post). If you are not familiar with ephemeral messages, they look like this:
 
 ![/ephemeral Message](images/ephemeral_message.png)
 
@@ -321,7 +321,31 @@ puts "Posted in channel" if Slack::API::Chat.post('Test from API', 'C516PHW2C')
 
 #### Update Message
 
+To update a message in Slack, you will use the ```Slack::API::Chat.update``` function. This function takes 3 mandatory arguments (text to use, timestamp of the message, channel ID) and 1 optional argument (an object containing various options for the post):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Message updated" if Slack::API::Chat.update('Nevermind', '1355517523.000005', 'C516PHW2C')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
+
 #### Delete Message
+
+To delete a message in Slack, you will use the ```Slack::API::Chat.delete``` function. This function takes 2 mandatory arguments ( timestamp of the message, channel ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Message deleted" if Slack::API::Chat.delete('1355517523.000005', 'C516PHW2C')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
 
 ### Using RTM
 
