@@ -277,7 +277,7 @@ This returns a boolean to indicate if the attempted action was successful.
 
 To post an ephemeral message, you will use the ```Slack::API::Chat.post_ephemeral``` function, which takes 3 mandatory arguments (text to post, Channel ID, and User ID) and one optional argument (an object containing various options for the post). If you are not familiar with ephemeral messages, they look like this:
 
-![/me Message](images/me_ephemeral.png)
+![/ephemeral Message](images/ephemeral_message.png)
 
 ```
 require 'slack-wrapper'
