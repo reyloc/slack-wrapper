@@ -25,6 +25,15 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Post Message w/ Attachment](https://github.com/reyloc/slack-wrapper#post-message-w-attachment)
     * [Update Message](https://github.com/reyloc/slack-wrapper#update-message)
     * [Delete Message](https://github.com/reyloc/slack-wrapper#delete-message)
+  * Files
+    * List Files
+    * Search for a File
+    * Delete a File
+    * Upload a File
+    * Add a File Comment
+    * Delete a File Comment
+    * Edit a File Comment
+    * Editing File URL properties
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
 
@@ -346,6 +355,24 @@ puts "Message deleted" if Slack::API::Chat.delete('1355517523.000005', 'C516PHW2
 ```
 
 This returns a boolean to indicate if the attempted action was successful.
+
+### Files
+
+#### List Files
+
+#### Search for a File
+
+#### Delete a File
+
+#### Upload a File
+
+#### Add a File Comment
+
+#### Delete a File Comment
+
+#### Edit a File Comment
+
+#### Editing File URL properties
 
 ### Using RTM
 
