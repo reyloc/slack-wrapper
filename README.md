@@ -152,10 +152,10 @@ channel = Slack::API::Channels.info('C516PHW2C')
 
 To get a history of all channel activity, you will use the ```Slack::API::Channels.history``` function. This takes 2 mandatory arguments:
 
-Argument | Meaning
----------|---------------------------
-id       | The Channel ID
-count    | Number of items to return
+Argument | Meaning                   | Type
+---------|---------------------------|--------
+id       | The Channel ID            | String
+count    | Number of items to return | Integer
 
 Keep in mind the more returned, the longer the query will take. It looks like this:
 
