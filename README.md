@@ -171,11 +171,62 @@ This will return an array of [message objects](https://api.slack.com/events/mess
 
 #### Joining/Leaving a Channel
 
+To join a channel, you will use the ```Slack::API::Channels.join``` function, which uses 1 mandatory variable (the channel name). To leave a channel, you instead use the ```Slack::API::Channels.leave``` function, which uses 1 mandatory variable (the channel ID). 
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Left Channel C516PHW2C" if Slack::API::Channels.leave('C516PHW2C')
+puts "Joined Channel bacon" if Slack::API::Channels.join('bacon')
+```
+
+Both return a boolean to indicate if the attempted action was successful.
+
 #### Inviting/Kicking a user to/from a Channel
+
+Inviting or kicking a user from a channel will require the User ID and Channel ID. The functions for these are ```Slack::API::Channels.invite_user``` and ```Slack::API::Channels.kick_user``` respectively. They both require 2 mandatory arguments, namely the User ID and Channel ID.
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Invited User U458DEQKW to Channel C516PHW2C" if Slack::API::Channels.invite_user('U458DEQKW', 'C516PHW2C')
+puts "Kick User U458DEQKW from Channnel C516PHW2C" if Slack::API::Channels.kick_user('U458DEQKW', 'C516PHW2C')
+```
+
+Both return a boolean to indicate if the attempted action was successful.
 
 #### Renaming a Channel
 
+To rename a channel, you will use the ```Slack::API::Channels.rename``` function. This takes 2 mandatory variables, namely the Channel ID and the new name to use. 
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Renamed Channel C516PHW2C to pizza" if Slack::API::Channels.rename('C516PHW2C', 'pizza')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
+
 #### Setting Channel Purpose and Topic
+
+To set a Channel's purpose or topic, you will use the functions ```Slack::API::Channels.set_pupose``` and ```Slack::API::Channels.set_topic``` respectively. Both take 2 mandatory arguments, namely the Channel ID and the text to use:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Channel C516PHW2C purpose now 'Nomnomnom'" if Slack::API::Channels.set_topic('C516PHW2C', 'Nomnomnom')
+puts "Channel C516PHW2C topic now 'Food'" if Slack::API::Channels.set_topic('C516PHW2C', 'Food')
+```
+
+Both return a boolean to indicate if the attempted action was successful.
 
 ### Using RTM
 
