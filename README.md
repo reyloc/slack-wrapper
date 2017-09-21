@@ -44,11 +44,15 @@ gem install slack-wrapper-0.0.1.gem
 ## Usage
 
 ### Create the bot and get a token
+
 Go to [this link](https://my.slack.com/services/new/bot) to create a new bot.
+
 ![Create a Bot Page](images/create_a_bot.png)
+
 From there you will be brought to a page where you can edit the bot name and other such settings. The API key is the important part here, so make sure to copy somewhere safe.
 
 ### Get your user's API token
+
 Go to [this link](https://api.slack.com/custom-integrations/legacy-tokens) to get a legacy token (you could go through the whole [Oauth2](https://api.slack.com/docs/oauth) process instead to get a token if you wish). From there, click to get an API token issued and copy it somewhere safe.
 
 ### Using the API token
@@ -239,11 +243,51 @@ Both return a boolean to indicate if the attempted action was successful.
 
 #### Post Standard Message
 
+To post a standard message, you will use the ```Slack::API::Chat.post``` function, which takes 2 mandatory arguments (text to post and Channel ID) and one optional argument (an object containing various options for the post). 
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Posted in channel" if Slack::API::Chat.post('Hello!', 'C516PHW2C')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
+
 #### Post Standard Message w/ Attachment
 
 #### Post /me Message
 
+To post a /me message, you will use the ```Slack::API::Chat.post_me``` function, which takes 2 mandatory arguments (text to post and Channel ID). If you are not familiar with /me messages, they look like this:
+
+![/me Message](images/me_message.png)
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Posted in channel" if Slack::API::Chat.post_me('is doing just fine', 'C516PHW2C')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
+
 #### Post Ephemeral Message
+
+To post an ephemeral message, you will use the ```Slack::API::Chat.post_ephemeral``` function, which takes 3 mandatory arguments (text to post, Channel ID, and User ID) and one optional argument (an object containing various options for the post). If you are not familiar with ephemeral messages, they look like this:
+
+![/me Message](images/me_ephemeral.png)
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "Posted in channel" if Slack::API::Chat.post_ephemeral('Hello back!', 'C516PHW2C', 'U458DEQKW')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
 
 #### Update Message
 
