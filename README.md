@@ -25,15 +25,15 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Post Message w/ Attachment](https://github.com/reyloc/slack-wrapper#post-message-w-attachment)
     * [Update Message](https://github.com/reyloc/slack-wrapper#update-message)
     * [Delete Message](https://github.com/reyloc/slack-wrapper#delete-message)
-  * Files
-    * List Files
-    * Search for a File
-    * Delete a File
-    * Upload a File
-    * Add a File Comment
-    * Delete a File Comment
-    * Edit a File Comment
-    * Editing File URL properties
+  * [Files](https://github.com/reyloc/slack-wrapper#files)
+    * [List Files](https://github.com/reyloc/slack-wrapper#list-files)
+    * [Search for a File](https://github.com/reyloc/slack-wrapper#search-for-a-file)
+    * [Delete a File](https://github.com/reyloc/slack-wrapper#delete-a-file)
+    * [Upload a File](https://github.com/reyloc/slack-wrapper#upload-a-file)
+    * [Add a File Comment](https://github.com/reyloc/slack-wrapper#add-a-file-comment)
+    * [Delete a File Comment](https://github.com/reyloc/slack-wrapper#delete-a-file-comment)
+    * [Edit a File Comment](https://github.com/reyloc/slack-wrapper#edit-a-file-comment)
+    * [Editing File URL properties](https://github.com/reyloc/slack-wrapper#editing-file-url-properties)
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
 * [License](https://github.com/reyloc/slack-wrapper#license)
 
