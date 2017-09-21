@@ -360,19 +360,138 @@ This returns a boolean to indicate if the attempted action was successful.
 
 #### List Files
 
+To get all files uploaded into Slack, you will use the ```Slack::API::Files.get_files``` function. This takes 1 optional argument, which is a comma separated `String` containing all the file types to look for. By default, this optional argument will look for all filetypes.
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+files = Slack::API::Files.get_files
+pdfs = Slack::API::Files.get_files('pdfs')
+zips_and_images = Slack::API::Files.get_files('zips,images')
+not_zips = Slack::API::Files.get_files('spaces,snippets,images,gdocs,pdfs')
+```
+
+This returns an array of [file objects](https://api.slack.com/types/file) converted into Hashes for your convenience.
+
 #### Search for a File
+
+To search through all files, you will use the ```Slack::API::Files.search``` function. This takes 1 mandatory option and two optional ones:
+
+Option Name | Mandatory?           | Description
+------------|----------------------|--------------------------
+term        | Yes                  | The search term
+regex       | No, default is false | Do a regex search
+
+To search for an active channel named 'bacon' we would use coding like:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+files = Slack::API::Files.search('bacon', true)
+```
+
+This will return a [file object](https://api.slack.com/types/file) that has been made into Hashes for your convenience. If you did a regex search, you instead get an array of [file objects](https://api.slack.com/types/file) that have been made into Hashes for your convenience
 
 #### Delete a File
 
+To delete a file, you will use the ```Slack::API::Files.delete``` function, which takes 1 mandatory argument (the file ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "File F2147483862 deleted" if Slack::API::Files.delete('F2147483862')
+```
+
+This returns a boolean to indicate if the attempted action was successful.
+
 #### Upload a File
+
+To upload a file, you will use the ```Slack::API::Files.upload``` function, which takes 2 mandatory arguments (path/to/file and a `String` of comma separated Channel IDs) and 1 optional argument (options to use for the upload). While it is technically required for file uploads, it is highly recommend you add options into your upload.
+
+Name            | Description
+----------------|-------------------------------------------------------
+channels        | Comma seperated channel IDs, added for you
+title           | The Title of file, defaults to the filename
+filename        | The name of the file, defaults to the filename
+filetype        | The type of file, defaults to auto 
+initial_comment | The first comment on file, defaults to a blank String
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+puts "File uploaded" if Slack::API::Files::Upload.new('/home/jcolyer/Pictures/usopp.jpg', 'C516PHW2C,C716QAB2D', {
+  :filetype => 'auto',
+  :title    => 'Usopp the Great',
+  :initial_comment => 'Testing comment'
+})
+```
+
+This returns a boolean to indicate if the attempted action was successful.
 
 #### Add a File Comment
 
+To add a comment to a file, you will use the ```Slack::API::Files.add_comment``` function, which takes 2 mandatory arguments (text for comment and the file ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+file = Slack::API::Files.add_comment('Awesome pic!', 'F71ESBBC5')
+```
+
+This returns a [file object](https://api.slack.com/types/file) that has been made into Hashes for your convenience. 
+
 #### Delete a File Comment
+
+To add a comment to a file, you will use the ```Slack::API::Files.delete_comment``` function, which takes 2 mandatory arguments (file ID and comment ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+file = Slack::API::Files.delete_comment('F71ESBBC5', 'Fc1234567890')
+```
+
+This returns a [file object](https://api.slack.com/types/file) that has been made into Hashes for your convenience. 
 
 #### Edit a File Comment
 
+To edit a comment to a file, you will use the ```Slack::API::Files.edit_comment``` function, which takes 3 mandatory arguments (text to use, file ID, and comment ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+file = Slack::API::Files.edit_comment('Loving it!', 'F71ESBBC5', 'Fc1234567890')
+```
+
+This returns a [file object](https://api.slack.com/types/file) that has been made into Hashes for your convenience.
+
 #### Editing File URL properties
+
+When a file is uploaded to Slack, it has a URL parameter that is either publicly available or is not. To edit this setting, we use the ```Slack::API::Files.revoke_URL``` function to revoke the public URL and the ```Slack::API::Files.enable_URL``` function to enable the public URL. Both require 1 mandatory argument (the file ID):
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+file_one = Slack::API::Files.revoke_URL('F71ESBBC5')
+file_two = Slack::API::Files.enable_URL('F82GACDG8')
+```
+
+Revoking the URL returns the URL itself while enabling it returns a [file object](https://api.slack.com/types/file) that has been made into Hashes for your convenience.
 
 ### Using RTM
 
