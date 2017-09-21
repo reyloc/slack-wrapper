@@ -8,9 +8,9 @@ This README is still a work in progress. I will add more to it as time permits.
   * [Create the bot and get a token](https://github.com/reyloc/slack-wrapper#create-the-bot-and-get-a-token)
   * [Get your user's API token](https://github.com/reyloc/slack-wrapper#get-your-users-api-token)
   * [Using the API token](https://github.com/reyloc/slack-wrapper#using-the-api-token)
-  * Authentication
-    * Test if authenticated
-  * Get API User ID and Name
+  * [Authentication](https://github.com/reyloc/slack-wrapper#authentication)
+    * [Test if authenticated](https://github.com/reyloc/slack-wrapper#test-if-authenticated)
+  * [Get API User ID and Name](https://github.com/reyloc/slack-wrapper#get-api-user-id-and-name)
   * [Channels](https://github.com/reyloc/slack-wrapper#channels)
     * [Listing all Channels](https://github.com/reyloc/slack-wrapper#listing-all-channels)
     * [Searching Channels](https://github.com/reyloc/slack-wrapper#searching-channels)
