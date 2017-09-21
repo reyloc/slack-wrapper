@@ -167,7 +167,7 @@ end
 history = Slack::API::Channels.history('C516PHW2C', 100)
 ```
 
-This will return an array of (message objects)[https://api.slack.com/events/message] converted into Hashes for your convenience.
+This will return an array of [message objects](https://api.slack.com/events/message) converted into Hashes for your convenience.
 
 #### Joining/Leaving a Channel
 
