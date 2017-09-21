@@ -20,9 +20,9 @@ This README is still a work in progress. I will add more to it as time permits.
     * [Setting Channel Purpose and Topic](https://github.com/reyloc/slack-wrapper#setting-channel-purpose-and-topic)
   * [Chat](https://github.com/reyloc/slack-wrapper#chat)
     * [Post Standard Message](https://github.com/reyloc/slack-wrapper#post-standard-message)
-    * [Post Standard Message w/ Attachment](https://github.com/reyloc/slack-wrapper#post-standard-message-w-attachment)
     * [Post /me Message](https://github.com/reyloc/slack-wrapper#post-me-message)
     * [Post Ephemeral Message](https://github.com/reyloc/slack-wrapper#post-ephemeral-message)
+    * [Post Message w/ Attachment](https://github.com/reyloc/slack-wrapper#post-message-w-attachment)
     * [Update Message](https://github.com/reyloc/slack-wrapper#update-message)
     * [Delete Message](https://github.com/reyloc/slack-wrapper#delete-message)
   * [Using RTM](https://github.com/reyloc/slack-wrapper/blob/master/README.md#using-rtm)
@@ -255,38 +255,6 @@ puts "Posted in channel" if Slack::API::Chat.post('Hello!', 'C516PHW2C')
 
 This returns a boolean to indicate if the attempted action was successful.
 
-#### Post Standard Message w/ Attachment
-
-To post a message in Slack that contains a [message attachment](https://api.slack.com/docs/message-attachments), you will use the optional argument available in the ```Slack::API::Chat.post``` and ```Slack::API::Chat.post_ephemeral``` functions. If you are unfamiliar with Slack message attachments, they look like this:
-
-![message attachment](images/message_attachment.png)
-
-To do this, you will need to write out the attachment object:
-
-```
-require 'slack-wrapper'
-Slack.configure do |config|
-  config.token = 'YOUR TOKEN HERE'
-end
-obj = ['fallback'    => 'Test of attachments fallback',
-       'color'       => '#8B008B',
-       'pretext'     => 'Test of attachments pretext',
-       'author_name' => 'Reyloc',
-       'author_link' => 'https://github.com/reyloc',
-       'title'       => 'Test of attachments title',
-       'title_link'  => 'https://api.slack.com/',
-       'text'        => 'Test of attachments text',
-       'fields'      => [
-         {
-           'title' => 'Test of attachments fields title',
-           'value' => 'Test of attachments fields value',
-           'short' => false
-         }
-        ]
-      ]
-puts "Posted in channel" if Slack::API::Chat.post('Test from API', 'C516PHW2C')
-```
-
 #### Post /me Message
 
 To post a /me message, you will use the ```Slack::API::Chat.post_me``` function, which takes 2 mandatory arguments (text to post and Channel ID). If you are not familiar with /me messages, they look like this:
@@ -318,6 +286,38 @@ puts "Posted in channel" if Slack::API::Chat.post_ephemeral('Hello back!', 'C516
 ```
 
 This returns a boolean to indicate if the attempted action was successful.
+
+#### Post Message w/ Attachment
+
+To post a message in Slack that contains a [message attachment](https://api.slack.com/docs/message-attachments), you will use the optional argument available in the ```Slack::API::Chat.post``` and ```Slack::API::Chat.post_ephemeral``` functions. If you are unfamiliar with Slack message attachments, they look like this:
+
+![message attachment](images/message_attachment.png)
+
+To do this, you will need to write out the attachment object:
+
+```
+require 'slack-wrapper'
+Slack.configure do |config|
+  config.token = 'YOUR TOKEN HERE'
+end
+obj = ['fallback'    => 'Test of attachments fallback',
+       'color'       => '#8B008B',
+       'pretext'     => 'Test of attachments pretext',
+       'author_name' => 'Reyloc',
+       'author_link' => 'https://github.com/reyloc',
+       'title'       => 'Test of attachments title',
+       'title_link'  => 'https://api.slack.com/',
+       'text'        => 'Test of attachments text',
+       'fields'      => [
+         {
+           'title' => 'Test of attachments fields title',
+           'value' => 'Test of attachments fields value',
+           'short' => false
+         }
+        ]
+      ]
+puts "Posted in channel" if Slack::API::Chat.post('Test from API', 'C516PHW2C')
+```
 
 #### Update Message
 
